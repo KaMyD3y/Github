@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Исходные файлы\5.2 solution">
+      <UniqueIdentifier>{886b70f5-d0c0-4df5-b4ff-16924db0a585}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\student">
+      <UniqueIdentifier>{024117d5-0f3a-4f7e-addf-37cbcbbabfec}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="vh.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="split.cpp">
+      <Filter>Исходные файлы\5.2 solution</Filter>
+    </ClCompile>
+    <ClCompile Include="rotation.cpp">
+      <Filter>Исходные файлы\5.2 solution</Filter>
+    </ClCompile>
+    <ClCompile Include="Student_info.cpp">
+      <Filter>Исходные файлы\student</Filter>
+    </ClCompile>
+    <ClCompile Include="median.cpp">
+      <Filter>Исходные файлы\student</Filter>
+    </ClCompile>
+    <ClCompile Include="grade.cpp">
+      <Filter>Исходные файлы\student</Filter>
+    </ClCompile>
+    <ClCompile Include="palindrom.cpp">
+      <Filter>Исходные файлы\5.2 solution</Filter>
+    </ClCompile>
+    <ClCompile Include="url.cpp">
+      <Filter>Исходные файлы\5.2 solution</Filter>
+    </ClCompile>
+    <ClCompile Include="frame.cpp">
+      <Filter>Исходные файлы\5.2 solution</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="vh.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="split.h">
+      <Filter>Исходные файлы\5.2 solution</Filter>
+    </ClInclude>
+    <ClInclude Include="rotation.h">
+      <Filter>Исходные файлы\5.2 solution</Filter>
+    </ClInclude>
+    <ClInclude Include="Student_info.h">
+      <Filter>Исходные файлы\student</Filter>
+    </ClInclude>
+    <ClInclude Include="median.h">
+      <Filter>Исходные файлы\student</Filter>
+    </ClInclude>
+    <ClInclude Include="grade.h">
+      <Filter>Исходные файлы\student</Filter>
+    </ClInclude>
+    <ClInclude Include="palindrom.h">
+      <Filter>Исходные файлы\5.2 solution</Filter>
+    </ClInclude>
+    <ClInclude Include="url.h">
+      <Filter>Исходные файлы\5.2 solution</Filter>
+    </ClInclude>
+    <ClInclude Include="frame.h">
+      <Filter>Исходные файлы\5.2 solution</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

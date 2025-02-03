@@ -102,13 +102,7 @@ bool did_all_hw(const Student_info& s) {
 	//return find(s.homework.begin(), s.homework.end(), 0) == s.homework.end();
 }
 
-//void write_analysis(ostream& out, const string& name,
-//	double analysis(const vector<Student_info>&),
-//	const vector<Student_info>& did,
-//	const vector<Student_info>& didnt)
-//{
-//	out << name << ": median(did) = " << analysis(did) << ": median(didnt) = " << analysis(didnt) << endl;
-//}
+
 void write_analysis(ostream& out, const string& name,
 	double analysis(const vector<Student_info>&),
 	const vector<Student_info>& did,
@@ -117,13 +111,13 @@ void write_analysis(ostream& out, const string& name,
 	out << name << ": median(did) = " << analysis(did)
 		<< ": median(didnt) = " << analysis(didnt) << endl;
 }
-//vector<Student_info> extract_fails(vector<Student_info>& students) {
-//	vector<Student_info> fail;
-//	remove_copy(students.begin(),students.end(),back_inserter(fail),pgrade);
-//
-//	students.erase(remove_if(students.begin(), students.end(), fgrade), students.end());
-//	return fail;
-//}
-//bool pgrade(const Student_info& s) {
-//	return !fgrade(s);
-//}
+vector<Student_info> extract_fails(vector<Student_info>& students) {
+	vector<Student_info> fail;
+	remove_copy(students.begin(),students.end(),back_inserter(fail),pgrade);
+
+	students.erase(remove_if(students.begin(), students.end(), fgrade), students.end());
+	return fail;
+}
+bool pgrade(const Student_info& s) {
+	return !fgrade(s);
+}

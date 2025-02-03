@@ -111,11 +111,18 @@ void write_analysis(ostream& out, const string& name,
 	out << name << ": median(did) = " << analysis(did)
 		<< ": median(didnt) = " << analysis(didnt) << endl;
 }
+// вариантов в написанне этого кода зависит от прохода то есть от быстроты!
+//vector<Student_info> extract_fails(vector<Student_info>& students) {
+//	vector<Student_info> fail;
+//	remove_copy(students.begin(),students.end(),back_inserter(fail),pgrade);
+//
+//	students.erase(remove_if(students.begin(), students.end(), fgrade), students.end());
+//	return fail;
+//}
 vector<Student_info> extract_fails(vector<Student_info>& students) {
-	vector<Student_info> fail;
-	remove_copy(students.begin(),students.end(),back_inserter(fail),pgrade);
-
-	students.erase(remove_if(students.begin(), students.end(), fgrade), students.end());
+	vector<Student_info>::iterator iter = stable_partition(students.begin(), students.end(), pgrade);
+	vector<Student_info>fail(iter, students.end());
+	students.erase(iter, students.end());
 	return fail;
 }
 bool pgrade(const Student_info& s) {

@@ -16,9 +16,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="vh.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="split.cpp">
       <Filter>Исходные файлы\5.2 solution</Filter>
     </ClCompile>
@@ -43,11 +40,11 @@
     <ClCompile Include="frame.cpp">
       <Filter>Исходные файлы\5.2 solution</Filter>
     </ClCompile>
+    <ClCompile Include="vh.cpp">
+      <Filter>Исходные файлы\5.2 solution</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="vh.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="split.h">
       <Filter>Исходные файлы\5.2 solution</Filter>
     </ClInclude>
@@ -70,6 +67,9 @@
       <Filter>Исходные файлы\5.2 solution</Filter>
     </ClInclude>
     <ClInclude Include="frame.h">
+      <Filter>Исходные файлы\5.2 solution</Filter>
+    </ClInclude>
+    <ClInclude Include="vh.h">
       <Filter>Исходные файлы\5.2 solution</Filter>
     </ClInclude>
   </ItemGroup>

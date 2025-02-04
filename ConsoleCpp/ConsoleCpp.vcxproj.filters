@@ -22,9 +22,6 @@
     <ClCompile Include="rotation.cpp">
       <Filter>Исходные файлы\5.2 solution</Filter>
     </ClCompile>
-    <ClCompile Include="Student_info.cpp">
-      <Filter>Исходные файлы\student</Filter>
-    </ClCompile>
     <ClCompile Include="median.cpp">
       <Filter>Исходные файлы\student</Filter>
     </ClCompile>
@@ -42,6 +39,9 @@
     </ClCompile>
     <ClCompile Include="vh.cpp">
       <Filter>Исходные файлы\5.2 solution</Filter>
+    </ClCompile>
+    <ClCompile Include="Student_info.cpp">
+      <Filter>Исходные файлы\student</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

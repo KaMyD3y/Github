@@ -7,41 +7,112 @@
 #include <cctype>
 #include <stdexcept>
 #include <sstream>
+#include <iterator>
 
 
 #include "Student_info.h"
 #include "median.h"
+#include "grade.h"
 using namespace std;
 
+
 int main() {
+	// могу себя поздравить мой первый сам написанный код
 	setlocale(LC_ALL, "RU");
-	vector<Student_info> did, didnt;
-	Student_info students;
-	while (read(cin,students)) {
-		if (did_all_hw(students))
-			did.push_back(students);
-		else
-			didnt.push_back(students);
+	vector<Student_info>students;
+	string input;
+	while (true) {
+		cin.clear();
+		cout << "Введите Имя или 'stop' для завершения: ";
+		cin >> input;
+		if (input == "stop"|| input == ";") break;
+
+		Student_info student;
+		student.name = input;
+
+		cout << "Введите оценки за мид и финал: ";
+		cin >> student.midterm >> student.final;
+
+		cout << "Введите все оценки за выполнение домашних заданий: ";
+		vector<double> grades;
+		read_hw(cin, grades);
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin.clear();
+		student.homework = grades;
+		students.push_back(student);
+
 	}
+	sort(students.begin(), students.end(), compare);
+
+	vector<Student_info> result = extract_fails(students);
 	
-	if (did.empty()) {
-		cout << "Ни один студент не выполнил всех домашних заданий! "
-			<< endl;
-		return 1;
-	}
-	if (didnt.empty()) {
-		cout << "Все студенты выполнили все домашние задания! "
-			<< endl;
-		return 1;
-	}
 
-	write_analysis(cout, "Median", median_analysis, did, didnt);
-	write_analysis(cout, "Average", average_analysis, did, didnt);
-	write_analysis(cout, "Optimistic Median", optimistic_median_analysis, did, didnt);
+	for (int i = 0; i != result.size(); ++i) {
+		cout<<"Имя:1 " << result[i].name  << ", Итоговая оценка: " << median_analysis(result) << endl;
+	}
+	for (int i = 0; i != students.size();i++) {
+		cout << "Имя:2 " << students[i].name << ", Итоговая оценка: " << median(students[i].homework) << endl;
 
+	}
 	return 0;
-
+	
 }
+
+
+//int main() {
+//	setlocale(LC_ALL, "RU");
+//	vector<Student_info> students = {
+//		{"Mihail",76,76,{76,76,76}},
+//		{"Ivan", 87, 90, {80, 85, 88}},
+//		{"Vasea", 37, 50, {56, 45, 35}},
+//		{ "Grisa", 27, 90, {20, 35, 48} },
+//		{"Alex", 45, 54, {30, 25, 58}},
+//	};
+//	vector<Student_info> result = extract_fails(students);
+//
+//	for (int i = 0; i != result.size();i++) {
+//		cout << "Имя: " << result[i].name
+//			<< ", Итоговая оценка: " << median(result[i].homework) << endl;
+//	}
+//	for (int i = 0; i != students.size();i++) {
+//		cout << "Имя: " << students[i].name
+//			<< ", Итоговая оценка: " << median(students[i].homework) << endl;
+//	}
+//
+//	return 0;
+//}
+
+//int main() {
+//	setlocale(LC_ALL, "RU");
+//	vector<Student_info> did, didnt;
+//	Student_info students;
+//	while (read(cin,students)) {
+//		if (did_all_hw(students)) {
+//			did.push_back(students);
+//			did = extract_fails(did);
+//		}
+//		else
+//			didnt.push_back(students);
+//	}
+//	
+//	if (did.empty()) {
+//		cout << "Ни один студент не выполнил всех домашних заданий! "
+//			<< endl;
+//		return 1;
+//	}
+//	if (didnt.empty()) {
+//		cout << "Все студенты выполнили все домашние задания! "
+//			<< endl;
+//		return 1;
+//	}
+//
+//	write_analysis(cout, "Median", median_analysis, did, didnt);
+//	write_analysis(cout, "Average", average_analysis, did, didnt);
+//	write_analysis(cout, "Optimistic Median", optimistic_median_analysis, did, didnt);
+//
+//	return 0;
+//
+//}
 
 //int main() {
 //	int *nums = new int[3];

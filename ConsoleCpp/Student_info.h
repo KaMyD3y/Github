@@ -25,5 +25,6 @@ void write_analysis(std::ostream& out, const std::string& name,
 	double analysis(const std::vector<Student_info>&),
 	const std::vector<Student_info>& did,
 	const std::vector<Student_info>& didnt);
+bool pgrade(const Student_info&);
 
 #endif

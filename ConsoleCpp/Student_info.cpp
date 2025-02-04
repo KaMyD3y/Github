@@ -120,6 +120,8 @@ void write_analysis(ostream& out, const string& name,
 //	return fail;
 //}
 vector<Student_info> extract_fails(vector<Student_info>& students) {
+	// stable_partition сортирует от правильному к неправельному то есть а предикат (pgrade) который сравнивает боол значение с аргументом
+	// потом интератор стартует от неправельного! теперь у нас students с теми кто сдал а fail с теми кто не сдал
 	vector<Student_info>::iterator iter = stable_partition(students.begin(), students.end(), pgrade);
 	vector<Student_info>fail(iter, students.end());
 	students.erase(iter, students.end());

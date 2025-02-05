@@ -16,6 +16,8 @@
 using namespace std;
 
 
+
+
 int main() {
 	// могу себя поздравить мой первый сам написанный код
 	setlocale(LC_ALL, "RU");
@@ -43,7 +45,7 @@ int main() {
 
 	}
 	sort(students.begin(), students.end(), compare);
-
+  // тут в result те кто не сдали!
 	vector<Student_info> result = extract_fails(students);
 	
 
@@ -51,7 +53,7 @@ int main() {
 		cout<<"Имя:1 " << result[i].name  << ", Итоговая оценка: " << median_analysis(result) << endl;
 	}
 	for (int i = 0; i != students.size();i++) {
-		cout << "Имя:2 " << students[i].name << ", Итоговая оценка: " << median(students[i].homework) << endl;
+		cout << "Имя:2 " << students[i].name << ", Итоговая оценка: " << optimistic_median_analysis(students) << endl;
 
 	}
 	return 0;

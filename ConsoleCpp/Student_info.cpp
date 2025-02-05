@@ -27,11 +27,16 @@ istream& read_hw(istream& in, vector<double>& hw)
 	if (in) {
 		
 		hw.clear();
-
+		//peek() показывает следующий символ, но не извлекает его из потока.Мы можем посмотреть, что будет дальше.
+		//eof() сообщает нам, что мы достигли конца потока(т.е.больше нет данных для чтения).
 		double x;
 		while (in >> x) {
 			hw.push_back(x);
+			if (in.peek() == '\n' || in.eof()) {
+				break;
+			}
 		}
+
 		in.clear();
 	}
 

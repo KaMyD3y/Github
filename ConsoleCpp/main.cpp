@@ -1,64 +1,67 @@
 
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <iomanip>
-#include <cctype>
-#include <stdexcept>
-#include <sstream>
-#include <iterator>
+//#include <iostream>
+//#include <string>
+//#include <vector>
+//#include <algorithm>
+//#include <iomanip>
+//#include <cctype>
+//#include <stdexcept>
+//#include <sstream>
+//#include <iterator>
+//
+//
+//#include "Student_info.h"
+//#include "median.h"
+//#include "grade.h"
+//using namespace std;
 
 
-#include "Student_info.h"
-#include "median.h"
-#include "grade.h"
-using namespace std;
 
 
-
-
-int main() {
-	// могу себя поздравить мой первый сам написанный код
-	setlocale(LC_ALL, "RU");
-	vector<Student_info>students;
-	string input;
-	while (true) {
-		cin.clear();
-		cout << "Введите Имя или 'stop' для завершения: ";
-		cin >> input;
-		if (input == "stop"|| input == ";") break;
-
-		Student_info student;
-		student.name = input;
-
-		cout << "Введите оценки за мид и финал: ";
-		cin >> student.midterm >> student.final;
-
-		cout << "Введите все оценки за выполнение домашних заданий: ";
-		vector<double> grades;
-		read_hw(cin, grades);
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		cin.clear();
-		student.homework = grades;
-		students.push_back(student);
-
-	}
-	sort(students.begin(), students.end(), compare);
-  // тут в result те кто не сдали!
-	vector<Student_info> result = extract_fails(students);
-	
-
-	for (int i = 0; i != result.size(); ++i) {
-		cout<<"Имя:1 " << result[i].name  << ", Итоговая оценка: " << median_analysis(result) << endl;
-	}
-	for (int i = 0; i != students.size();i++) {
-		cout << "Имя:2 " << students[i].name << ", Итоговая оценка: " << optimistic_median_analysis(students) << endl;
-
-	}
-	return 0;
-	
-}
+//int main() {
+//	// могу себя поздравить мой первый сам написанный код
+//	setlocale(LC_ALL, "RU");
+//	vector<Student_info>students;
+//	string input;
+//	while (true) {
+//		cin.clear();
+//		cout << "Введите Имя или 'stop' для завершения: ";
+//		cin >> input;
+//		if (input == "stop"|| input == ";") break;
+//
+//		Student_info student;
+//		student.name = input;
+//
+//		cout << "Введите оценки за мид и финал: ";
+//		cin >> student.midterm >> student.final;
+//
+//		cout << "Введите все оценки за выполнение домашних заданий: ";
+//		vector<double> grades;
+//		read_hw(cin, grades);
+//		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+//		cin.clear();
+//		student.homework = grades;
+//		students.push_back(student);
+//
+//	}
+//	sort(students.begin(), students.end(), compare);
+//  // тут в result те кто не сдали!
+//
+//	vector<Student_info> result = extract_fails(students);
+//	
+//	cout << "Не сдали \n";
+//	for (int i = 0; i != result.size(); ++i) {
+//		cout<<"Имя:1 " << result[i].name  << ", Итоговая оценка: " << median_analysis(result) << endl;
+//	}
+//	cout << "Сдали \n";
+//	for (int i = 0; i != students.size();i++) {
+//		cout << "Имя:2 " << students[i].name << ", Итоговая оценка: " << optimistic_median_analysis(students) << endl;
+//
+//	}
+//
+//	return 0;
+//	
+//}
 
 
 //int main() {

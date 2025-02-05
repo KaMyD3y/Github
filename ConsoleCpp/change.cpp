@@ -4,7 +4,7 @@
 #include <algorithm>  // ִכÿ אכדמנטעלמג (find_if)
 #include <cctype>     // ִכÿ נאבמעû ס סטלגמכאלט (isspace)
 
-#include "frame.h"
+#include "change.h"
 
 using namespace std;
 

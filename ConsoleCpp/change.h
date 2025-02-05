@@ -1,5 +1,5 @@
-#ifndef GUARD_frame_h
-#define GUARD_frame_h
+#ifndef GUARD_change_h
+#define GUARD_change_h
 
 #include <string>
 #include <vector>

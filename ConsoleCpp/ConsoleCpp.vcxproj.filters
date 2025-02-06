@@ -34,9 +34,6 @@
     <ClCompile Include="url.cpp">
       <Filter>Исходные файлы\5.2 solution</Filter>
     </ClCompile>
-    <ClCompile Include="frame.cpp">
-      <Filter>Исходные файлы\5.2 solution</Filter>
-    </ClCompile>
     <ClCompile Include="vh.cpp">
       <Filter>Исходные файлы\5.2 solution</Filter>
     </ClCompile>
@@ -64,9 +61,6 @@
       <Filter>Исходные файлы\5.2 solution</Filter>
     </ClInclude>
     <ClInclude Include="url.h">
-      <Filter>Исходные файлы\5.2 solution</Filter>
-    </ClInclude>
-    <ClInclude Include="frame.h">
       <Filter>Исходные файлы\5.2 solution</Filter>
     </ClInclude>
     <ClInclude Include="vh.h">

@@ -2,36 +2,63 @@
 #include <string>
 #include "frame.h"
 
+
+
 using std::vector;
 using std::string;
 using std::max;
 
-// code is taken from І5.8.1/92
+
 string::size_type width(const vector<string>& v)
 {
     string::size_type maxlen = 0;
-    for (vector<string>::size_type i = 0; i != v.size(); ++i)
-        maxlen = max(maxlen, v[i].size());
+    for (vector<string>::const_iterator it = v.begin(); it != v.end();it++) {
+        maxlen = max(maxlen, it->size());
+    }
     return maxlen;
 }
 
-// code is taken from І5.8.1/93
+
+
+// ƒва варианта frame оба работаю!
 vector<string> frame(const vector<string>& v)
 {
     vector<string> ret;
     string::size_type maxlen = width(v);
     string border(maxlen + 4, '*');
 
-    // write the top border
+    // верхн€€ граница
     ret.push_back(border);
 
-    // write each interior row, bordered by an asterisk and a space
-    for (vector<string>::size_type i = 0; i != v.size(); ++i) {
-        ret.push_back("* " + v[i] +
-            string(maxlen - v[i].size(), ' ') + " *");
+    // обрамление строк
+    for (vector<string>::const_iterator iter = v.begin(); iter != v.end(); ++iter) {
+        ret.push_back("* " + *iter + string(maxlen - iter->size(), ' ') + " *");
     }
 
-    // write the bottom border
+    // нижн€€ граница
     ret.push_back(border);
     return ret;
 }
+//vector<string> frame(const vector<string>& v)
+//{
+//    vector<string> ret;
+//    string::size_type maxlen = width(v);
+//    string border(maxlen + 4, '*');
+//
+//    // write the top border
+//    ret.push_back(border);
+//
+//    // write each interior row, bordered by an asterisk and a space
+//    //auto in loock vector<string>::iterator
+//    typedef vector<string> ::const_iterator iter;
+//    iter i = v.begin();
+//
+//    for (; i != v.end(); ++i) {
+//        ret.push_back("* " + *i +
+//            string(maxlen - i->size(), ' ') + " *");
+//    }
+//
+//    // write the bottom border
+//    ret.push_back(border);
+//    return ret;
+//}

@@ -19,11 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\ConsoleCpp\frame.h" />
+    <ClInclude Include="diagram.h" />
+    <ClInclude Include="frame.h" />
+    <ClInclude Include="otsplit.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\ConsoleCpp\frame.cpp" />
+    <ClCompile Include="diagram.cpp" />
+    <ClCompile Include="frame.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="otsplit.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

@@ -4,7 +4,7 @@
 #include <algorithm>  // ִכÿ אכדמנטעלמג (find_if)
 #include <cctype>     // ִכÿ נאבמעû ס סטלגמכאלט (isspace)
 
-#include "change.h"
+#include "otsplit.h"
 
 using namespace std;
 

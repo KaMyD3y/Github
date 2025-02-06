@@ -127,7 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="frame.cpp" />
     <ClCompile Include="grade.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="median.cpp" />
@@ -139,7 +138,6 @@
     <ClCompile Include="url.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="frame.h" />
     <ClInclude Include="grade.h" />
     <ClInclude Include="median.h" />
     <ClInclude Include="palindrom.h" />

@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <cctype>
 #include <iostream>
+#include <numeric>
 
 #include "find_url.h"
 
@@ -14,6 +15,8 @@ int main() {
 	// так же можно сделать и через vector<string>::iterator i = get_link.begin();
 	for (auto i = get_links.begin();i != get_links.end();i++) {
 		cout << *i << endl;
+		
 	}
+	cout << accumulate(get_links.begin(), get_links.end(), string(""));
 }
 

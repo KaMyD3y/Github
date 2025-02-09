@@ -13,6 +13,8 @@ using namespace std;
 
 
 int main() {
+	int num;
+	cout << num;
 	/*vector<int> u{34,54};*/
 	//vector<int> u(10, 100);
 	//vector<int> v(10);
@@ -43,11 +45,12 @@ int main() {
 	//for (auto i = v.begin();i != v.end();i++) {
 	//	cout << "1: " << *i << endl;
 	//}
-	vector <int> u(10, 100);
-	vector<int> v(u.size());
-	vector <int>::iterator it = v.begin();
-	copy(u.begin(), u.end(), it);
-	copy(v.begin(), v.end(), ostream_iterator<int>(cout, ""));
+	//vector <int> u(10, 100);
+	//vector<int> v(u.size());//суть в том что v контейнер не он изначально не имеет размера поэтому он не знает как будет записывается! 
+	// если увеличить размер то есть дать значение но появляется больше способов!
+	//vector <int>::iterator it = v.begin();
+	//copy(u.begin(), u.end(), it);
+	//copy(v.begin(), v.end(), ostream_iterator<int>(cout, ""));
 	//for (auto i = v.begin();i != v.end();i++) {
 	//	cout << "1: " << *i << endl;
 	//}

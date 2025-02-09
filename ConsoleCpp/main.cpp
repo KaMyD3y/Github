@@ -1,21 +1,56 @@
 
-//#include <iostream>
-//#include <string>
-//#include <vector>
-//#include <algorithm>
-//#include <iomanip>
-//#include <cctype>
-//#include <stdexcept>
-//#include <sstream>
-//#include <iterator>
-//
-//
-//#include "Student_info.h"
-//#include "median.h"
-//#include "grade.h"
-//using namespace std;
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <iomanip>
+#include <cctype>
+#include <stdexcept>
+#include <sstream>
+#include <iterator>
 
 
+#include "Student_info.h"
+#include "median.h"
+#include "grade.h"
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "RU");
+	vector<Student_info> did, didnt;
+	Student_info students;
+	while (read(cin,students)) {
+		if (did_all_hw(students)) {
+			did.push_back(students);
+		}
+		else
+			didnt.push_back(students);
+
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin.clear();
+
+	}
+
+	if (did.empty()) {
+		cout << "Ни один студент не выполнил всех домашних заданий! "
+			<< endl;
+		return 1;
+	}
+	if (didnt.empty()) {
+		cout << "Все студенты выполнили все домашние задания! "
+			<< endl;
+		return 1;
+	}
+	
+	cout << "Размеры векторов: did = " << did.size() << ", didnt = " << didnt.size() << endl;
+
+	write_analysis(cout, "Median", median_analysis, did, didnt);
+	write_analysis(cout, "Average", average_analysis, did, didnt);
+	write_analysis(cout, "Optimistic Median", optimistic_median_analysis, did, didnt);
+
+	return 0;
+
+}
 
 //int main() {
 //	// могу себя поздравить мой первый сам написанный код
@@ -86,37 +121,7 @@
 //	return 0;
 //}
 
-//int main() {
-//	setlocale(LC_ALL, "RU");
-//	vector<Student_info> did, didnt;
-//	Student_info students;
-//	while (read(cin,students)) {
-//		if (did_all_hw(students)) {
-//			did.push_back(students);
-//			did = extract_fails(did);
-//		}
-//		else
-//			didnt.push_back(students);
-//	}
-//	
-//	if (did.empty()) {
-//		cout << "Ни один студент не выполнил всех домашних заданий! "
-//			<< endl;
-//		return 1;
-//	}
-//	if (didnt.empty()) {
-//		cout << "Все студенты выполнили все домашние задания! "
-//			<< endl;
-//		return 1;
-//	}
-//
-//	write_analysis(cout, "Median", median_analysis, did, didnt);
-//	write_analysis(cout, "Average", average_analysis, did, didnt);
-//	write_analysis(cout, "Optimistic Median", optimistic_median_analysis, did, didnt);
-//
-//	return 0;
-//
-//}
+
 
 //int main() {
 //	int *nums = new int[3];

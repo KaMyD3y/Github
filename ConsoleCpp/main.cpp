@@ -44,9 +44,9 @@ int main() {
 	
 	cout << "Размеры векторов: did = " << did.size() << ", didnt = " << didnt.size() << endl;
 
-	write_analysis(cout, "Median", median_analysis, did, didnt);
-	write_analysis(cout, "Average", average_analysis, did, didnt);
-	write_analysis(cout, "Optimistic Median", optimistic_median_analysis, did, didnt);
+	write_analysis(cout, "Median", analysis_together, did, didnt);
+	write_analysis(cout, "Average", analysis_together, did, didnt);
+	write_analysis(cout, "Optimistic Median", analysis_together, did, didnt);
 
 	return 0;
 

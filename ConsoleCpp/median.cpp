@@ -72,18 +72,19 @@ double optimistic_median(const Student_info& s) {
 //}
 double analysis_together(const vector<Student_info>& students)
 {
-	vector<double> grades/* , grades1 , grades2*/;
+	vector<double> grades/*, grades1 , grades2*/;
+
 
 	grades.reserve(students.size() * 3); // Оптимизируем память
-
 	transform(students.begin(), students.end(), back_inserter(grades), optimistic_median);
 	transform(students.begin(), students.end(), back_inserter(grades), average_grade);
 	transform(students.begin(), students.end(), back_inserter(grades), grade_aux);
+	
 
 	//grades.insert(grades.end(), grades1.begin(), grades1.end());
 	//grades.insert(grades.end(), grades2.begin(), grades2.end());
-
 	return median(grades);
 }
+
 
 #endif

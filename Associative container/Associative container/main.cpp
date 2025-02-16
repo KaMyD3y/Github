@@ -1,41 +1,34 @@
-
-#include <vector>
-#include <string>
-#include <iostream>
+#include <map>
 #include <algorithm>
+#include <vector>
+#include <iostream>
+#include <string>
 #include <cctype>
-#include <istream>
-#include <ostream>
 
-using namespace std;
+using  namespace std;
 
 
 
-vector<string> result(const vector<string>& input) {
-	for (int i = 0;i != input.size();i++) {
-		cout << "cite un cuvint: " << input[i] << endl;
-	}
-	//for (auto i = input.begin();i != input.end();++i) {
-	//	cout << "scoatem: " << *i << endl;
-	//}
-	cout << "tot masivul" << input.size() << endl;
-	return input;
 
-}
-int main() {
-	cout << "ВВедите что нибудь";
-	string input;
-	vector<string> all_some;
-	while (cin >> input && input != "stop") {
-		all_some.push_back(input);
-	}
-	//result(all_some);
-	//getline(cin, input);
-	//for (auto i = all_some.begin();i != all_some.end();i++) {
-	//	all_some.push_back(input);
-	//}
-	//all_some.push_back(input);
-	result(all_some);
-	return 0;
 
-}
+//int main() {
+//	setlocale(LC_ALL, "RU");
+//
+//	string s;
+//
+//	map<string, int> counters; // храним значение и счетчик !
+//
+//	//считываем входные данные , отслеживая количество
+//	//вхождений каждого слово
+//
+//	while (cin >> s)
+//		++counters[s];
+//
+//	//выводим слова и соответствующие счетчики
+//	for (map<string, int>::const_iterator it = counters.begin();it != counters.end();it++) {
+//		cout << it->first << "\t" << it->second << endl;
+//	}
+//	return 0;
+//
+//
+//}

@@ -5,24 +5,163 @@
 #include <ostream>
 #include <bitset>
 #include <sstream>
+#include <limits>
+#include <cstdint>
 
 
 
 using namespace std;
 
+int Calculate(int* arr, int len) {
+    int min = *arr;
+    for (int i = 0;i < len; i++) {
+        if (min > *(arr + i)) {
+            min = *(arr+i);
+            cout << "Minimal1 " << min << endl;
+
+        }
+        cout << "Minimal2 " << min << endl;
+    }
+    cout << "Minimal3 " << min << endl;
+    return min;
+}
+int main() {
+    int Numbers[] = { 3,5,2,-4,7 };
+    Calculate(Numbers, 5);
+
+    return 0;
+}
+
+//int main() {
+//    //my Hero
+//    const uint8_t Run = 0x01;
+//    const uint8_t health = 0x02;
+//    const uint8_t space = 0x03;
+//    const uint8_t armor = 0x04;
+//
+//    cout << "choice the skills! " << endl;
+//    cout << "1 - Run: " << endl;
+//    cout << "2 - Health: " << endl;
+//    cout << "3 - Space: " << endl;
+//    cout << "4 - Armor: " << endl;
+//    cout << "Enter the number: ";
+//    int x;
+//    uint8_t HeroSkills = 0;
+//    cin >> x;
+//    if (x == 1) {
+//        HeroSkills |= Run;
+//        cout << "I got Number" << endl;
+//        cout << "Ability: " << bitset<8>(HeroSkills) << " Run" << endl;
+//    }
+//    else if (x == 2) {
+//        HeroSkills |= health;
+//        cout << "I got Number" << endl;
+//        cout << "Ability: " << bitset<8>(HeroSkills) << " Health" << endl;
+//    }
+//    else if (x == 3) {
+//        HeroSkills |= space;
+//        cout << "I got Number" << endl;
+//        cout << "Ability: " << bitset<8>(HeroSkills) << " Space" << endl;
+//    }
+//    else {
+//        HeroSkills |=(Run | space);
+//        cout << "I got Number" << endl;
+//        cout << "Ability: " << bitset<8>(HeroSkills) << " Armor with Run" << endl;
+//    }
+//    return 0;
+//
+//}
+
+
+
+//std::string ToBinary(int Number)
+//{
+//    int StartIndex = sizeof(Number) * 4;
+//
+//    std::string BitForm;
+//    for (int i = StartIndex - 1; i >= 0; --i)
+//    {
+//        int Shifted = Number >> i;
+//        std::cout << Shifted << " " << Shifted << std::endl;
+//        BitForm += (((Shifted) & 1) ? '1' : '0');
+//    }
+//
+//    return BitForm;
+//}
+//std::string ToBinary(int Number) {
+//    int StartIndex = sizeof(Number) * 4;//=16 bits
+//    std::string BitForm;
+//    //cout << "!: " << sizeof(StartIndex) << endl;
+//    for (int i = StartIndex - 1; i >= 0;i--) { //  end to start;
+//        //cout << "start" << i << "! ";
+//
+//        int Shifted = Number >> i;
+//        //std::cout << "Shifted" << Shifted << "! "<< (((Shifted) & 1) ? '1' : '0') << std::endl;
+//        BitForm += (((Shifted) & 1) ? '1' : '0');
+//    }
+//    return BitForm;
+//}
+//std::string ToBinary(int Number)
+//{
+//    int StartIndex = sizeof(Number) * 4;
+//    std::string BitForm;
+//    for (int i = 0;i < StartIndex;i++)
+//    {
+//        int Shifted = Number >> i;
+//        BitForm += (((Shifted) & 1) ? '1' : '0') or +BitForm in end;
+//
+//    }
+//    return BitForm;
+//}
+//
+//int main() {
+//    //int a = std::numeric_limits<int>::max();
+//    int a = 1;
+//    std::cout << ToBinary(a) << std::endl;
+//    a = a << 3;
+//    std::cout << ToBinary(a) << std::endl;
+//    //a = a << 1;
+//    //std::cout << ToBinary(a) << std::endl;
+//    //a = a >> 2;
+//    //std::cout << ToBinary(a) << std::endl;
+//
+//    return 0;
+//}
+
+//int main() {
+//    int a = 1;
+//    std::cout << (a & 0x1) << std::endl;
+//    a = 2;
+//    std::cout << (a & 0x1) << std::endl;
+//
+//    a = 1;
+//    a = a << 1;
+//    std::cout << a << std::endl;
+//    a = a << 1;
+//    std::cout << a << std::endl;
+//    a = a << 1;
+//    std::cout << a << std::endl;
+//    a = a << 1;
+//    std::cout << a << std::endl;
+//    a = a >> 1;
+//    std::cout << a << std::endl;
+//
+//    return 0;
+//}
+
 // Целочисленный литерал
 
-std::string toHex(int num) {
-    if (num == 0) return 0;
-    string result ;
-    string numbers[16] = { "0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F" };
-    int bit = 0;
-    while (num) {
-        bit = num % 16;
-        result.append(numbers[bit]);
-        num /= 16;
-
-    }
+//std::string toHex(int num) {
+//    if (num == 0) return 0;
+//    string result ;
+//    string numbers[] = { "0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F" };
+//    int bit = 0;
+//    while (num) {
+//        bit = num % 16;
+//        result.append(numbers[bit]);
+//        num /= 16;
+//
+//    }
     //while (num) {
     //    bit = num % 16;
     //    switch (bit) {
@@ -59,15 +198,15 @@ std::string toHex(int num) {
 
 
     //}
-    int resultSize = result.size();
-    for (int i = 0; i < resultSize / 2; i++) {
-        int tmp = result[i];
-        result[i] = result[resultSize - i - 1];
-        result[resultSize - i - 1] = tmp;
-    }
-    return result;
-    
-}
+//    int resultSize = result.size();
+//    for (int i = 0; i < resultSize / 2; i++) {
+//        int tmp = result[i];
+//        result[i] = result[resultSize - i - 1];
+//        result[resultSize - i - 1] = tmp;
+//    }
+//    return result;
+//    
+//}
 // this to help me Sasha )
 //std::string toHex(int num) {
 //    char Symbols[] = { "0123456789ABCDEF" };
@@ -145,18 +284,18 @@ std::string toHex(int num) {
 
 
 
-int main() {
-    //setlocale(LC_ALL, "RU");
-    int num = 42;
-    //cout << "Число Введите:";
-    //while (cin >> num) {
-    std::cout << "Hex: " << toHex(num) << std::endl;
-        //std::cout << "Byte: " << toByte(num) << std::endl;
-
-    //}
-    //cout << hex << num << endl;
-    return 0;
-}
+//int main() {
+//    //setlocale(LC_ALL, "RU");
+//    int num = 42;
+//    //cout << "Число Введите:";
+//    //while (cin >> num) {
+//    std::cout << "Hex: " << toHex(num) << std::endl;
+//        //std::cout << "Byte: " << toByte(num) << std::endl;
+//
+//    //}
+//    //cout << hex << num << endl;
+//    return 0;
+//}
 
 
 //vector<int> showOddOrEven(vector<int>& numbers) {

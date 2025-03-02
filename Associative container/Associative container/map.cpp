@@ -10,7 +10,7 @@
 using namespace std;
 //Находим все строки , в которых есть каждое слова
 //из исходного текста.
-map<string, vector<int>> xref(istream in, vector<string> find_words(const string&) = split)
+map<string, vector<int>> xref(istream& in, vector<string> find_words(const string&) = split)
 {
 	string line;
 	int line_number = 0;
@@ -23,6 +23,10 @@ map<string, vector<int>> xref(istream in, vector<string> find_words(const string
 
 		//помним, что каждое слова встречается 
 		//на текущей строке
+		for (vector<string>::const_iterator it = words.begin();it != words.end();it++) {
+			ret[*it].push_back(line_number);
+		}
 	}
+	return ret;
 
 }

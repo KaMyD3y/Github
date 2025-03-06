@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Associative container", "As
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sasha test", "Sasha test\Sasha test.vcxproj", "{DE3B2AEA-3F71-4299-BE0B-F4B32AF066EA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Writing generic functions", "Writing generic functions\Writing generic functions.vcxproj", "{4278D411-0156-4DBC-A55F-7AD6BDBCA212}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{DE3B2AEA-3F71-4299-BE0B-F4B32AF066EA}.Release|x64.Build.0 = Release|x64
 		{DE3B2AEA-3F71-4299-BE0B-F4B32AF066EA}.Release|x86.ActiveCfg = Release|Win32
 		{DE3B2AEA-3F71-4299-BE0B-F4B32AF066EA}.Release|x86.Build.0 = Release|Win32
+		{4278D411-0156-4DBC-A55F-7AD6BDBCA212}.Debug|x64.ActiveCfg = Debug|x64
+		{4278D411-0156-4DBC-A55F-7AD6BDBCA212}.Debug|x64.Build.0 = Debug|x64
+		{4278D411-0156-4DBC-A55F-7AD6BDBCA212}.Debug|x86.ActiveCfg = Debug|Win32
+		{4278D411-0156-4DBC-A55F-7AD6BDBCA212}.Debug|x86.Build.0 = Debug|Win32
+		{4278D411-0156-4DBC-A55F-7AD6BDBCA212}.Release|x64.ActiveCfg = Release|x64
+		{4278D411-0156-4DBC-A55F-7AD6BDBCA212}.Release|x64.Build.0 = Release|x64
+		{4278D411-0156-4DBC-A55F-7AD6BDBCA212}.Release|x86.ActiveCfg = Release|Win32
+		{4278D411-0156-4DBC-A55F-7AD6BDBCA212}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
